@@ -204,7 +204,6 @@
 	const form = document.querySelector("#message-form");
 	async function sendData() 
 	{
-		// Associate the FormData object with the form element
 		const formData = new FormData(form);
 		const data = {};
 		formData.forEach((value,key) => { data[key] = value; });
@@ -214,7 +213,6 @@
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json", "custom-token": "m#zjcWWXGXQqdcJqj5d7@BYCk6wr@y8@Bdn!xkGwjuQ%Fck*"},
-				// Set the FormData instance as the request body
 				body: JSON.stringify(data)
 			});
 
@@ -226,7 +224,6 @@
 		}
 	}
 
-	// Take over form submission
 	form.addEventListener("submit", (event) =>
 	{
 		event.preventDefault();
