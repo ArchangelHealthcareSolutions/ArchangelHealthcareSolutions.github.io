@@ -209,7 +209,7 @@
 		formData.forEach((value,key) => { data[key] = value; });
 		try
 		{
-			const response = await fetch("https://6jwe4nbknaw4n2ixuyvnmbrgtu0cmccd.lambda-url.us-east-1.on.aws",
+			const response = await fetch("https://jy4q3avsd636cqksvn664otbnq0djpal.lambda-url.us-east-1.on.aws/",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json", "custom-token": "m#zjcWWXGXQqdcJqj5d7@BYCk6wr@y8@Bdn!xkGwjuQ%Fck*"},
@@ -229,5 +229,24 @@
 		event.preventDefault();
 		sendData();
 	});
+
+	async function sendVisitPing()
+	{
+		try
+		{
+			const response = await fetch("https://bb6xpsipay3mvnonn7d7iocssi0fssmj.lambda-url.us-east-1.on.aws/",
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json", "custom-token": "m#zjcWWXGXQqdcJqj5d7@BYCk6wr@y8@Bdn!xkGwjuQ%Fck*"},
+			});
+
+			console.log(await response);
+		} catch (e)
+		{
+			console.error(e);
+		}
+	}
+
+	sendVisitPing();
 </script>
 </html>
